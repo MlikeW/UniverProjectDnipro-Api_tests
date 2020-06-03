@@ -15,3 +15,11 @@ Scenario: Usual positive flow
 
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
+
+Scenario: Delete user before process order
+	When I add 'Pandemia' book to Lord Voldemort user cart
+	And I delete Lord Voldemort user
+	And I create order from Lord Voldemort user cart
+	Then I check Lord Voldemort user order absence in store
+
+	When I delete 'Pandemia' book from store

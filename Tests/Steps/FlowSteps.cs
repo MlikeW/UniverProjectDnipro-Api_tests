@@ -55,12 +55,14 @@ namespace Tests.Steps
             new Cart(Send).ProcessOrderFromCart(userId);
         }
 
-        [Then("I check (.*) user order presence in store")]
-        public void CheckOrder(string userName)
+        [Then("I check (.*) user order (presence|absence) in store")]
+        public void CheckOrder(string userName, string presence)
         {
+            var count = 0;
             var userId = ((SingleUser)content[userName]).ID;
             var userOrderCount = new Orders(Send).GetUsersOrdersInfo(userId).content;
-            Assert.AreEqual(userOrderCount.Count, 1, "User order count doesn't equal to 1");
+            if (presence == "presence") count = 1;
+            Assert.AreEqual(userOrderCount.Count, count, "User order count doesn't equal to 1");
         }
     }
 }
