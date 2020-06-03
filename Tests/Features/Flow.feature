@@ -50,6 +50,20 @@ Scenario: Delete from store one of two book in cart
 #clean up
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
+	#--
+Scenario: Check absence of deleted book from cart in order
+	When I add 'Pandemia' book to Lord Voldemort user cart
+	And I add 'World War' book to store
+	And I add 'World War' book to Lord Voldemort user cart
+	And I delete 'Pandemia' book from Lord Voldemort user cart
+	And I create order from Lord Voldemort user cart
+	Then I check Lord Voldemort user order presence in store
+	And Lord Voldemort user order contain books
+	| Books     |
+	| World War |
+#clean up
+	When I delete Lord Voldemort user
+	And I delete 'World War' book from store
+	And I delete 'Pandemia' book from store
 
-#check absence of deleted book from cart in order
 #using two users try to buy more then available

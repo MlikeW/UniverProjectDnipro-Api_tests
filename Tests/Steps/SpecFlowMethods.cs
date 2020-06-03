@@ -15,7 +15,7 @@ namespace Tests.Steps
         internal static Dictionary<string, string> ToHorizontalDictionary(this Table table)
             => table.Header.ToDictionary(head => head, head => table.Rows[0][head]);
 
-        public static List<string> SingleColumnToList(this Table table)
+        public static List<string> ToList(this Table table)
             => table.Rows.Select(row => row[0]).ToList();
 
         public static Dictionary<string, string[]> ToVerticalDictionaryValueArray(this Table table)
