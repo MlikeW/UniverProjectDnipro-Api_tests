@@ -2,17 +2,17 @@
 	As a user of Dnipro store
 	I want to be able to create account and make an order
 
-Background: 
+Background:
 	Given I create user in store
 		| Name           | Age | Email                  | Address |
 		| Lord Voldemort | 45  | avadakedavra@gmail.com | London  |
 	And I add 'Pandemia' book to store
 
-Scenario: Usual positive flow
+Scenario: Easy positive flow
 	When I add 'Pandemia' book to Lord Voldemort user cart
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order present in store
-#clean up
+	#clean up
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
 
@@ -21,7 +21,7 @@ Scenario: Delete user before process order
 	And I delete Lord Voldemort user
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order absent in store
-#clean up
+	#clean up
 	When I delete 'Pandemia' book from store
 
 Scenario: Delete book before process order
@@ -29,14 +29,14 @@ Scenario: Delete book before process order
 	And I delete 'Pandemia' book from store
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order absent in store
-#clean up
+	#clean up
 	When I delete Lord Voldemort user
 
 Scenario: Order more books then available in store
 	When I add 'Pandemia' book to Lord Voldemort user cart 6 times
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order absent in store
-#clean up
+	#clean up
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
 
@@ -47,10 +47,10 @@ Scenario: Delete from store one of two book in cart
 	And I delete 'Pandemia' book from store
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order absent in store
-#clean up
+	#clean up
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
-	#--
+
 Scenario: Check absence of deleted book from cart in order
 	When I add 'Pandemia' book to Lord Voldemort user cart
 	And I add 'World War' book to store
@@ -59,9 +59,9 @@ Scenario: Check absence of deleted book from cart in order
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order present in store
 	And Lord Voldemort user order contain books
-	| Books     |
-	| World War |
-#clean up
+		| Books     |
+		| World War |
+	#clean up
 	When I delete Lord Voldemort user
 	And I delete 'World War' book from store
 	And I delete 'Pandemia' book from store
@@ -76,12 +76,12 @@ Scenario Outline: Two users try to buy all and more then available books
 	And I place order from Tom Riddle user cart
 	Then I check Lord Voldemort user order present in store
 	And I check Tom Riddle user order <Presence> in store
-#clean up
+	#clean up
 	When I delete Lord Voldemort user
 	And I delete Tom Riddle user
 	And I delete 'Pandemia' book from store
 
 	Examples:
-	| Quantity | Presence |
-	| 2        | present  |
-	| 5        | absent   |
+		| Quantity | Presence |
+		| 2        | present  |
+		| 5        | absent   |
