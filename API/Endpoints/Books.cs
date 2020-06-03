@@ -13,7 +13,7 @@ namespace API.Endpoints
         {
         }
 
-        public Books GetAllBooks(int bookId)
+        public Books GetAllBooks()
             => (Books)Send.Get<Books>(MainPoint, HttpStatusCode.OK);
 
         public SingleBook CreateBook(string title)

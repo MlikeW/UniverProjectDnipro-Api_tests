@@ -3,9 +3,7 @@
 namespace API.Messages.OrdersMes
 {
     public class Orders
-
     {
-
         public IList<SingleOrder> content { get; set; }
 
         public Pageable pageable { get; set; }

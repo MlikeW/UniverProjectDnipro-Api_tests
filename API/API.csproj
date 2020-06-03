@@ -103,6 +103,10 @@
     <Compile Include="Messages\BooksMes\Books.cs" />
     <Compile Include="Messages\BooksMes\CreateBook.cs" />
     <Compile Include="Messages\BooksMes\SingleBook.cs" />
+    <Compile Include="Messages\CartMes\Quantity.cs" />
+    <Compile Include="Messages\CartMes\UpdateCartItem.cs" />
+    <Compile Include="Messages\CartMes\UserCart.cs" />
+    <Compile Include="Messages\CartMes\CartItem.cs" />
     <Compile Include="Messages\OrdersMes\OrdersByUser.cs" />
     <Compile Include="Messages\OrdersMes\SingleOrder.cs" />
     <Compile Include="Endpoints\BaseEndpoint.cs" />
