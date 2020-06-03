@@ -29,6 +29,7 @@ namespace Tests.Steps
             => new Users(Send).DeleteUserInStore(((SingleUser)content[userName]).ID);
 
         [Given("I add '(.*)' book to store")]
+        [When("I add '(.*)' book to store")]
         public void AddBookToStore(string bookTitle)
         {
             var bookEntity = new Books(Send).CreateBook(new CreateBook(bookTitle));
