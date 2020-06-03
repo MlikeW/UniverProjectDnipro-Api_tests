@@ -97,11 +97,11 @@ namespace Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Usual positive flow")]
-        public virtual void UsualPositiveFlow()
+        [NUnit.Framework.DescriptionAttribute("Easy positive flow")]
+        public virtual void EasyPositiveFlow()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Usual positive flow", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Easy positive flow", null, ((string[])(null)));
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -460,10 +460,10 @@ this.FeatureBackground();
  testRunner.When("I add \'Pandemia\' book to Lord Voldemort user cart 3 times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 74
- testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I add \'Pandemia\' book to Tom Riddle user cart {0} times", quantity), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 75
- testRunner.And(string.Format("I add \'Pandemia\' book to Tom Riddle user cart {0} times", quantity), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 76
  testRunner.And("I place order from Tom Riddle user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
