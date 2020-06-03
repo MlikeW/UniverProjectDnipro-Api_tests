@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{3F362C57-23DE-43E6-9E65-A11AA05CC684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtilities", "CommonUtilities\CommonUtilities.csproj", "{C2039E79-412A-4A8A-83CF-F9F2A1615543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{41F592FC-C654-4685-BB3B-4FEB0CA8E8AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F362C57-23DE-43E6-9E65-A11AA05CC684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F362C57-23DE-43E6-9E65-A11AA05CC684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F362C57-23DE-43E6-9E65-A11AA05CC684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F362C57-23DE-43E6-9E65-A11AA05CC684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2039E79-412A-4A8A-83CF-F9F2A1615543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2039E79-412A-4A8A-83CF-F9F2A1615543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2039E79-412A-4A8A-83CF-F9F2A1615543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2039E79-412A-4A8A-83CF-F9F2A1615543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F592FC-C654-4685-BB3B-4FEB0CA8E8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F592FC-C654-4685-BB3B-4FEB0CA8E8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F592FC-C654-4685-BB3B-4FEB0CA8E8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F592FC-C654-4685-BB3B-4FEB0CA8E8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A1FB1FA-512E-4230-9719-CE5852DE9AE5}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+*.exe
+#*.dll
+*.suo
+bin
+obj
+*.txt
+*.cache
+*.pdb
+*.ldf
+*.mdf
+
+#MSTests files
+TestResults
+
+#NUnit files
+TestResult.xml
+
+#Nuget
+packages
+!nuget.exe
+
+#Webdriver
+!chromedriver.exe
+!geckodriver.exe
+
+#Visual Studio Files
+_UpgradeReport_Files
+
+storage.ide
+.vs/
+.idea/
