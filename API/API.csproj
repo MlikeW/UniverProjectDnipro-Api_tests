@@ -99,6 +99,9 @@
     <Compile Include="Endpoints\Cart.cs" />
     <Compile Include="Endpoints\Orders.cs" />
     <Compile Include="Endpoints\Users.cs" />
+    <Compile Include="Messages\BooksMes\Author.cs" />
+    <Compile Include="Messages\BooksMes\CreateBook.cs" />
+    <Compile Include="Messages\BooksMes\SingleBook.cs" />
     <Compile Include="Messages\OrdersMes\OrdersByUser.cs" />
     <Compile Include="Messages\OrdersMes\SingleOrder.cs" />
     <Compile Include="Endpoints\BaseEndpoint.cs" />
@@ -124,9 +127,7 @@
       <Name>CommonUtilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Messages\BooksMes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

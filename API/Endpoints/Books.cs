@@ -1,4 +1,8 @@
-﻿namespace API.Endpoints
+﻿using System.Net;
+using API.Messages.BooksMes;
+using API.Messages.OrdersMes;
+
+namespace API.Endpoints
 {
     internal class Books : BaseEndpoint
     {
@@ -8,6 +12,9 @@
         public Books(Sender.Sender send) : base(send)
         {
         }
+
+        public SingleBook CreateBook(string title)
+            => (SingleBook)Send.Get<SingleBook>(MainPoint, HttpStatusCode.OK, new CreateBook(title));
 
     }
 }
