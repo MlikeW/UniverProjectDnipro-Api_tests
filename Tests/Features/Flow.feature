@@ -23,3 +23,11 @@ Scenario: Delete user before process order
 	Then I check Lord Voldemort user order absence in store
 
 	When I delete 'Pandemia' book from store
+
+Scenario: Delete book before process order
+	When I add 'Pandemia' book to Lord Voldemort user cart
+	And I delete 'Pandemia' book from store
+	And I create order from Lord Voldemort user cart
+	Then I check Lord Voldemort user order absence in store
+
+	When  I delete Lord Voldemort user
