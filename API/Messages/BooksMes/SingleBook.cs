@@ -2,7 +2,7 @@
 
 namespace API.Messages.BooksMes
 {
-    class SingleBook
+    public class SingleBook
     {
         public string id { get; set; }
 

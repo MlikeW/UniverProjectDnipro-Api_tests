@@ -1,26 +1,28 @@
-﻿using System.Net;
-using API.Messages.BooksMes;
-using API.Messages.OrdersMes;
+﻿using API.Messages.BooksMes;
+using System.Net;
 
 namespace API.Endpoints
 {
-    internal class Books : BaseEndpoint
+    public class Books : BaseEndpoint
     {
         protected override string MainPoint { get; } = "books";
-        private string BookPoint(int bookId) => GetChildPoint(bookId.ToString());
+        private string BookPoint(string bookId) => GetChildPoint(bookId);
 
         public Books(Sender.Sender send) : base(send)
         {
         }
 
-        public Books GetAllBooks()
-            => (Books)Send.Get<Books>(MainPoint, HttpStatusCode.OK);
+        public AllBooks GetAllBooks()
+            => (AllBooks)Send.Get<AllBooks>(MainPoint);
 
-        public SingleBook CreateBook(string title)
-            => (SingleBook)Send.Post<SingleBook>(MainPoint, HttpStatusCode.OK, new CreateBook(title));
+        public SingleBook CreateBook(CreateBook book)
+            => (SingleBook)Send.Post<SingleBook>(MainPoint, HttpStatusCode.OK, book);
 
-        public SingleBook GetSingleBook(int bookId)
-            => (SingleBook)Send.Get<SingleBook>(BookPoint(bookId), HttpStatusCode.OK);
+        public void DeleteBook(string bookId)
+            => Send.Delete<object>(BookPoint(bookId), HttpStatusCode.OK);
+
+        public SingleBook GetSingleBook(string bookId)
+            => (SingleBook)Send.Get<SingleBook>(BookPoint(bookId));
 
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Methods\EnumMethods.cs" />
     <Compile Include="Methods\CustomAttributes\XPathAttribute.cs" />
     <Compile Include="Methods\ObjectMethods.cs" />
+    <Compile Include="Methods\ParseMethods.cs" />
     <Compile Include="Methods\TryCatchMethods.cs" />
     <Compile Include="Methods\UrlMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

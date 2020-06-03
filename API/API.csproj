@@ -100,7 +100,7 @@
     <Compile Include="Endpoints\Orders.cs" />
     <Compile Include="Endpoints\Users.cs" />
     <Compile Include="Messages\BooksMes\Author.cs" />
-    <Compile Include="Messages\BooksMes\Books.cs" />
+    <Compile Include="Messages\BooksMes\AllBooks.cs" />
     <Compile Include="Messages\BooksMes\CreateBook.cs" />
     <Compile Include="Messages\BooksMes\SingleBook.cs" />
     <Compile Include="Messages\CartMes\Quantity.cs" />
@@ -112,7 +112,7 @@
     <Compile Include="Endpoints\BaseEndpoint.cs" />
     <Compile Include="Messages\OrdersMes\OrderDetails.cs" />
     <Compile Include="Messages\OrdersMes\OrderItem.cs" />
-    <Compile Include="Messages\OrdersMes\Orders.cs" />
+    <Compile Include="Messages\OrdersMes\AllOrders.cs" />
     <Compile Include="Messages\Pageable.cs" />
     <Compile Include="Messages\Sort.cs" />
     <Compile Include="Messages\UserMes\CreateUser.cs" />

@@ -2,7 +2,7 @@
 
 namespace API.Messages.BooksMes
 {
-    class Books
+    public class AllBooks
     {
         public IList<SingleBook> content { get; set; }
 

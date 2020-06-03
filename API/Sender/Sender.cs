@@ -18,7 +18,7 @@ namespace API.Sender
             DELETE
         }
 
-        private static readonly string Url = ConfigurationManager.AppSettings["SourceUrl"];
+        private static readonly string Url = "http://34.120.224.10/";
 
         public object Get<T>(
             string requestEndpoint,

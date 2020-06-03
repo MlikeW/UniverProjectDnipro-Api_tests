@@ -2,7 +2,7 @@
 
 namespace API.Messages.OrdersMes
 {
-    public class Orders
+    public class AllOrders
     {
         public IList<SingleOrder> content { get; set; }
 

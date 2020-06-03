@@ -4,7 +4,7 @@ using System.Net;
 
 namespace API.Endpoints
 {
-    internal class Users : BaseEndpoint
+    public class Users : BaseEndpoint
     {
         protected override string MainPoint { get; } = "users";
         private string UserPoint(int userId) => GetChildPoint(userId.ToString());
@@ -16,11 +16,14 @@ namespace API.Endpoints
         public List<SingleUser> GetAllUsersInStore()
             => (List<SingleUser>)Send.Get<List<SingleUser>>(MainPoint);
 
-        public SingleUser CreateUserInStore(string name, int age, string email, string address)
-            => (SingleUser)Send.Post<SingleUser>(MainPoint, HttpStatusCode.OK, new CreateUser(name, age, email, address));
+        public SingleUser CreateUserInStore(CreateUser user)
+            => (SingleUser)Send.Post<SingleUser>(MainPoint, HttpStatusCode.OK, user);
 
         public SingleUser GetUserInStore(int userId)
-            => (SingleUser)Send.Get<SingleUser>(UserPoint(userId), HttpStatusCode.OK);
+            => (SingleUser)Send.Get<SingleUser>(UserPoint(userId));
+
+        public void DeleteUserInStore(int userId)
+            => Send.Delete<object>(UserPoint(userId), HttpStatusCode.NoContent);
 
 
     }

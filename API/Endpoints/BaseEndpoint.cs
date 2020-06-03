@@ -2,7 +2,7 @@
 
 namespace API.Endpoints
 {
-    internal abstract class BaseEndpoint
+    public abstract class BaseEndpoint
     {
         protected abstract string MainPoint { get; }
 
