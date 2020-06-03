@@ -100,6 +100,7 @@
     <Compile Include="Endpoints\Orders.cs" />
     <Compile Include="Endpoints\Users.cs" />
     <Compile Include="Messages\BooksMes\Author.cs" />
+    <Compile Include="Messages\BooksMes\Books.cs" />
     <Compile Include="Messages\BooksMes\CreateBook.cs" />
     <Compile Include="Messages\BooksMes\SingleBook.cs" />
     <Compile Include="Messages\OrdersMes\OrdersByUser.cs" />
@@ -108,8 +109,8 @@
     <Compile Include="Messages\OrdersMes\OrderDetails.cs" />
     <Compile Include="Messages\OrdersMes\OrderItem.cs" />
     <Compile Include="Messages\OrdersMes\Orders.cs" />
-    <Compile Include="Messages\OrdersMes\Pageable.cs" />
-    <Compile Include="Messages\OrdersMes\Sort.cs" />
+    <Compile Include="Messages\Pageable.cs" />
+    <Compile Include="Messages\Sort.cs" />
     <Compile Include="Messages\UserMes\CreateUser.cs" />
     <Compile Include="Messages\UserMes\SingleUser.cs" />
     <Compile Include="Sender\ContentTypes.cs" />

@@ -1,4 +1,4 @@
-﻿namespace API.Messages.OrdersMes
+﻿namespace API.Messages
 {
     public class Pageable
 
