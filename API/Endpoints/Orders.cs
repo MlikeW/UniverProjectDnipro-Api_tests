@@ -16,8 +16,7 @@ namespace API.Endpoints
             => (AllOrders)Send.Get<AllOrders>(MainPoint);
 
         public AllOrders GetUsersOrdersInfo(int userId)
-            => (AllOrders)Send.Get<AllOrders>($"{MainPoint}?userId={userId}", HttpStatusCode.OK);
-            // => (AllOrders)Send.Get<AllOrders>(MainPoint, HttpStatusCode.OK, new OrdersByUser(userId));
+            => (AllOrders)Send.Get<AllOrders>(MainPoint, HttpStatusCode.OK, new OrdersByUser(userId));
 
         public SingleOrder GetCurrentOrdersInfo(int orderId)
             => (SingleOrder)Send.Get<SingleOrder>(OrderPoint(orderId));

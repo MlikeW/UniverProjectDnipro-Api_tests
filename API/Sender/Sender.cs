@@ -1,10 +1,10 @@
 ﻿using CommonUtilities.Methods;
+using CommonUtilities.Methods.CustomAttributes;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Net;
-using NUnit.Framework;
 
 namespace API.Sender
 {
@@ -73,7 +73,7 @@ namespace API.Sender
             request.AddHeaders(headers);
             request.Method = requestType.ToString();
 
-            if (body != null)//todo: avoid parameters to url
+            if (body != null && !body.IfPropertyWithAttributeExists<AddSingleParameterToUrlAttribute>())//todo: avoid parameters to url
             {
                 var content = body.ToBytesByContentType(request, contentType);
                 using var stream = request.GetRequestStream();

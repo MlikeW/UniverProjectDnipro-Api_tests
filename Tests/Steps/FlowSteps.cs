@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using API.Endpoints;
+﻿using API.Endpoints;
 using API.Messages.BooksMes;
-using API.Messages.OrdersMes;
 using API.Messages.UserMes;
 using API.Sender;
 using CommonUtilities.Methods;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace Tests.Steps
@@ -51,21 +50,21 @@ namespace Tests.Steps
             new Cart(Send).AddItemToCart(userId, bookId, quantity.ToInt());
         }
 
-        [When("I create order from (.*) user cart")]
+        [When("I place order from (.*) user cart")]
         public void ProcessOrder(string userName)
             => new Cart(Send).ProcessOrderFromCart(((SingleUser)content[userName]).ID);
 
-        [Then("I check (.*) user order (presence|absence) in store")]
+        [Then("I check (.*) user order (present|absent) in store")]
         public void CheckOrder(string userName, string presence)
         {
-            var count = 0;
+            var expectedCount = 0;
             var userId = ((SingleUser)content[userName]).ID;
             var userOrderCount = new Orders(Send).GetUsersOrdersInfo(userId).content;
-            if (presence == "presence")
+            if (presence == "present")
             {
-                count = 1;
+                expectedCount = 1;
             }
-            Assert.AreEqual(userOrderCount.Count, count, "User order count doesn't equal to 1");
+            Assert.AreEqual(expectedCount, userOrderCount.Count, "User order count doesn't equal to 1");
         }
 
         [When("I delete '(.*)' book from (.*) user cart")]

@@ -129,10 +129,10 @@ this.FeatureBackground();
  testRunner.When("I add \'Pandemia\' book to Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.And("I create order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
- testRunner.Then("I check Lord Voldemort user order presence in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I check Lord Voldemort user order present in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
  testRunner.When("I delete Lord Voldemort user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -180,10 +180,10 @@ this.FeatureBackground();
  testRunner.And("I delete Lord Voldemort user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
- testRunner.And("I create order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
- testRunner.Then("I check Lord Voldemort user order absence in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I check Lord Voldemort user order absent in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 25
  testRunner.When("I delete \'Pandemia\' book from store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -228,10 +228,10 @@ this.FeatureBackground();
  testRunner.And("I delete \'Pandemia\' book from store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
- testRunner.And("I create order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
- testRunner.Then("I check Lord Voldemort user order absence in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I check Lord Voldemort user order absent in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 33
  testRunner.When("I delete Lord Voldemort user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -273,10 +273,10 @@ this.FeatureBackground();
  testRunner.When("I add \'Pandemia\' book to Lord Voldemort user cart 6 times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 37
- testRunner.And("I create order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
- testRunner.Then("I check Lord Voldemort user order absence in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I check Lord Voldemort user order absent in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 40
  testRunner.When("I delete Lord Voldemort user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -330,10 +330,10 @@ this.FeatureBackground();
  testRunner.And("I delete \'Pandemia\' book from store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 48
- testRunner.And("I create order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 49
- testRunner.Then("I check Lord Voldemort user order absence in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I check Lord Voldemort user order absent in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 51
  testRunner.When("I delete Lord Voldemort user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -387,10 +387,10 @@ this.FeatureBackground();
  testRunner.And("I delete \'Pandemia\' book from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 59
- testRunner.And("I create order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 60
- testRunner.Then("I check Lord Voldemort user order presence in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I check Lord Voldemort user order present in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Books"});
@@ -406,6 +406,81 @@ this.FeatureBackground();
  testRunner.And("I delete \'World War\' book from store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 67
+ testRunner.And("I delete \'Pandemia\' book from store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Two users try to buy all and more then available books")]
+        [NUnit.Framework.TestCaseAttribute("2", "present", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "absent", null)]
+        public virtual void TwoUsersTryToBuyAllAndMoreThenAvailableBooks(string quantity, string presence, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Two users try to buy all and more then available books", null, exampleTags);
+#line 69
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Age",
+                            "Email",
+                            "Address"});
+                table3.AddRow(new string[] {
+                            "Tom Riddle",
+                            "17",
+                            "SlytherinHeir@gmail.com",
+                            "SecretRoom"});
+#line 70
+ testRunner.And("I create user in store", ((string)(null)), table3, "And ");
+#line hidden
+#line 73
+ testRunner.When("I add \'Pandemia\' book to Lord Voldemort user cart 3 times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
+ testRunner.And("I place order from Lord Voldemort user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 75
+ testRunner.And(string.Format("I add \'Pandemia\' book to Tom Riddle user cart {0} times", quantity), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+ testRunner.And("I place order from Tom Riddle user cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 77
+ testRunner.Then("I check Lord Voldemort user order present in store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 78
+ testRunner.And(string.Format("I check Tom Riddle user order {0} in store", presence), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 80
+ testRunner.When("I delete Lord Voldemort user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 81
+ testRunner.And("I delete Tom Riddle user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 82
  testRunner.And("I delete \'Pandemia\' book from store", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
