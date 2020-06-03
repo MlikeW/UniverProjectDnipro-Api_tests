@@ -21,6 +21,5 @@ namespace API.Endpoints
         public SingleOrder GetCurrentOrdersInfo(int orderId)
             => (SingleOrder)Send.Get<SingleOrder>(OrderPoint(orderId), HttpStatusCode.OK);
 
-
     }
 }

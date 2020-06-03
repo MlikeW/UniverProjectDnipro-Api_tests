@@ -107,6 +107,8 @@
     <Compile Include="Messages\OrdersMes\Orders.cs" />
     <Compile Include="Messages\OrdersMes\Pageable.cs" />
     <Compile Include="Messages\OrdersMes\Sort.cs" />
+    <Compile Include="Messages\UserMes\CreateUser.cs" />
+    <Compile Include="Messages\UserMes\SingleUser.cs" />
     <Compile Include="Sender\ContentTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sender\RequestMethods.cs" />
@@ -123,7 +125,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Messages\UserMes\" />
+    <Folder Include="Messages\BooksMes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

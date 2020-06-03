@@ -22,7 +22,7 @@ namespace API.Sender
 
         public object Get<T>(
             string requestEndpoint,
-            HttpStatusCode expectedStatusCode,
+            HttpStatusCode expectedStatusCode = HttpStatusCode.OK,
             object body = null,
             ContentTypes contentType = ContentTypes.Json,
             Dictionary<HttpRequestHeader, string> headers = null,
