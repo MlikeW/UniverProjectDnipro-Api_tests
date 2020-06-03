@@ -12,7 +12,7 @@ Scenario: Usual positive flow
 	When I add 'Pandemia' book to Lord Voldemort user cart
 	And I create order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order presence in store
-
+#clean up
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
 
@@ -21,7 +21,7 @@ Scenario: Delete user before process order
 	And I delete Lord Voldemort user
 	And I create order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order absence in store
-
+#clean up
 	When I delete 'Pandemia' book from store
 
 Scenario: Delete book before process order
@@ -29,5 +29,13 @@ Scenario: Delete book before process order
 	And I delete 'Pandemia' book from store
 	And I create order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order absence in store
+#clean up
+	When I delete Lord Voldemort user
 
-	When  I delete Lord Voldemort user
+Scenario: Order more books then available in store
+	When I add 'Pandemia' book to Lord Voldemort user cart 6 times
+	And I create order from Lord Voldemort user cart
+	Then I check Lord Voldemort user order absence in store
+#clean up
+	When I delete Lord Voldemort user
+	And I delete 'Pandemia' book from store
