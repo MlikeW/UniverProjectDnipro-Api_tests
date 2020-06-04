@@ -10,7 +10,7 @@ namespace API.Endpoints
             => Path.Combine(MainPoint, childPoint);
 
         protected string GetChildPoint(params string[] childPoint)
-            => GetSingleChildPoint(Path.Combine(childPoint));
+            => GetSingleChildPoint(Path.Combine(childPoint)).Replace("\\", "/");
 
         protected Sender.Sender Send;
 

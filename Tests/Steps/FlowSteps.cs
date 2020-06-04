@@ -50,6 +50,12 @@ namespace Tests.Steps
             new Cart(Send).AddItemToCart(userId, bookId, quantity.ToInt());
         }
 
+        [When("I delete '(.*)' book from (.*) user cart")]
+        public void DeleteBookFromCart(string bookTitle, string userName)
+            => new Cart(Send).DeleteItemFromCart(
+                ((SingleUser)content[userName]).ID,
+                ((SingleBook)content[bookTitle]).id);
+
         [When("I place order from (.*) user cart")]
         public void ProcessOrder(string userName)
             => new Cart(Send).ProcessOrderFromCart(((SingleUser)content[userName]).ID);
@@ -66,12 +72,6 @@ namespace Tests.Steps
             }
             Assert.AreEqual(expectedCount, userOrderCount.Count, "User order count doesn't equal to 1");
         }
-
-        [When("I delete '(.*)' book from (.*) user cart")]
-        public void DeleteBookFromCart(string bookTitle, string userName)
-            => new Cart(Send).DeleteItemFromCart(
-                ((SingleUser)content[userName]).ID, 
-                ((SingleBook)content[bookTitle]).id);
 
         [Then("(.*) user order contain books")]
         public void OrderContainsBooks(string userName, Table table)

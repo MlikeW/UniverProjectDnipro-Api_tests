@@ -11,7 +11,6 @@ namespace API.Sender
 {
     public static class RequestMethods
     {
-        private static readonly string Token = ConfigurationManager.AppSettings["SourceToken"];
         private static readonly string UserAgent = ConfigurationManager.AppSettings["UserAgent"];
 
         public static void AddHeader(this HttpWebRequest request, HttpRequestHeader header, string value)
@@ -64,8 +63,7 @@ namespace API.Sender
 
         public static void ApplyStandardHeaders(this HttpWebRequest request, ContentTypes acceptedContentType)
         {
-            request.UserAgent = UserAgent; 
-            request.Headers.Add(HttpRequestHeader.Authorization, $"Bearer {Token}");
+            request.UserAgent = UserAgent;
             request.Accept = acceptedContentType.GetEnumSinglePropertyValue<DescriptionAttribute>();
         }
 
