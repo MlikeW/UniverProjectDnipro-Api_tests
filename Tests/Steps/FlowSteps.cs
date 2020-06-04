@@ -74,7 +74,7 @@ namespace Tests.Steps
                 ((SingleBook)content[bookTitle]).id);
 
         [Then("(.*) user order contain books")]
-        public void DeleteBookFromCart(string userName, Table table)
+        public void OrderContainsBooks(string userName, Table table)
         {
             var expectedListOfBooks = table.ToList().Select(book => 
                 ((SingleBook)content[book]).id).ToList();
@@ -88,6 +88,21 @@ namespace Tests.Steps
                     .Select(item => item.itemId)
                     .ToList();
             Assert.AreEqual(expectedListOfBooks, actualListOfBooks, "Expected and actual lists of books are not equal");
+        }
+
+        [Then("(.*) user order contain books with quantity")]
+        public void OrderContainsBooksWithQuantity(string userName, Table table)
+        {
+            var expectedBooks = table.Rows.ToDictionary(row => row[0], row => ((SingleBook)content[row[1]]).id);
+            var actualBooks
+                = new Orders(Send)
+                    .GetUsersOrdersInfo(((SingleUser) content[userName]).ID)
+                    .content
+                    .First()
+                    .orderDetails
+                    .orderItems
+                    .ToDictionary(item => item.quantity, item => item.itemId);
+            Assert.AreEqual(expectedBooks, actualBooks, "Expected and actual lists of books are not equal");
         }
     }
 }

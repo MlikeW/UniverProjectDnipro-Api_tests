@@ -51,37 +51,23 @@ Scenario: Delete from store one of two book in cart
 	When I delete Lord Voldemort user
 	And I delete 'Pandemia' book from store
 
-Scenario: Check absence of deleted book from cart in order
-	When I add 'Pandemia' book to Lord Voldemort user cart
+Scenario Outline: Check correctness of different quantity of books in order
+	When I add 'Pandemia' book to Lord Voldemort user cart <Quantity 1> times
 	And I add 'World War' book to store
-	And I add 'World War' book to Lord Voldemort user cart
-	And I delete 'Pandemia' book from Lord Voldemort user cart
+	And I add 'World War' book to Lord Voldemort user cart <Quantity 2> times
 	And I place order from Lord Voldemort user cart
 	Then I check Lord Voldemort user order present in store
 	And Lord Voldemort user order contain books
-		| Books     |
-		| World War |
+		| Books     | Quantity     |
+		| Pandemia  | <Quantity 1> |
+		| World War | <Quantity 2> |
 	#clean up
 	When I delete Lord Voldemort user
+	And I delete 'Pandemia' book from store
 	And I delete 'World War' book from store
-	And I delete 'Pandemia' book from store
-
-Scenario Outline: Two users try to buy all and more then available books
-	And I create user in store
-		| Name       | Age | Email                   | Address    |
-		| Tom Riddle | 17  | SlytherinHeir@gmail.com | SecretRoom |
-	When I add 'Pandemia' book to Lord Voldemort user cart 3 times
-	And I add 'Pandemia' book to Tom Riddle user cart <Quantity> times
-	And I place order from Lord Voldemort user cart
-	And I place order from Tom Riddle user cart
-	Then I check Lord Voldemort user order present in store
-	And I check Tom Riddle user order <Presence> in store
-	#clean up
-	When I delete Lord Voldemort user
-	And I delete Tom Riddle user
-	And I delete 'Pandemia' book from store
 
 	Examples:
-		| Quantity | Presence |
-		| 2        | present  |
-		| 5        | absent   |
+		| Quantity 1 | Quantity 2 |
+		| 2          | 3          |
+		| 1          | 5          |
+		
